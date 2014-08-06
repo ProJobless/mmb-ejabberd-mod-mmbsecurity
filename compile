@@ -1,0 +1,8 @@
+#!/bin/bash
+
+[ -z "$EJABBERD_SRC" ] && { echo "You must define the env variable EJABBERD_SRC pointing to ejabberd source code folder"; exit 1; }
+
+ERLC_OPT="-I $EJABBERD_SRC/include/ -I $EJABBERD_SRC/deps/ -pz $EJABBERD_SRC/src"
+ERLC_OPT="$ERLC_OPT -o ./ebin"
+
+erlc $ERLC_OPT src/mod_mmbsecurity.erl
