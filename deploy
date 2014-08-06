@@ -1,0 +1,9 @@
+#!/bin/bash
+# @author jfernandes
+#
+# Simply copies the binary file to ejabberd installation binaries folder
+#
+
+[ -z "$EJABBERD_HOME" ] && { echo "You must define the env variable EJABBERD_HOME pointing to your ejabberd (binaries) installation"; exit 1; }
+
+cp ebin/*.beam $EJABBERD_HOME/lib/ejabberd-14.07/ebin/
